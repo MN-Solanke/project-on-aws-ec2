@@ -1,0 +1,49 @@
+
+
+<!--Store this code in 'update.html' file inside the 'templates' folder-->
+<html lang="en">
+	<head>
+		<title>index</title>
+		<link rel="stylesheet" href="../static/style.css">
+	</head>
+	<body bgcolor="#5c9db1">
+		<div class="one">
+			<div class="two">
+				<h2>Phenomenals</h2><br>
+				<ul>
+					<li><a href="{{url_for('index')}}">Index</a></li>
+					<li class="active"><a href="{{url_for('download_file')}}">Download</a></li>
+					<li><a href="{{url_for('profile')}}">Profile</a></li>
+					<li><a href="{{url_for('update')}}">Update</a></li>
+					<li><a href="{{url_for('logout')}}">Log out</a></li>
+				</ul>
+			</div>
+			<div class="content" align="center">
+					<div class="topbar">
+						<h1>Welcome!! You are in files Page!! </h1>						
+					</div></br></br>
+					<div class="contentbar">
+					<h1>Download files</h1></br><br>
+					<div class="content", align="center">
+					<table class="table table-striped", style="width:70%">
+					<tr>
+						<th align="left">Filename</th>
+					</tr>	
+						{% for row in account %}
+						
+						<tr>
+							<td >{{ row["filesname"] }}</td>	
+						
+							<td align="left"><a href="/return-files/{{ row['filesname'] }}" target="blank"></a></td>
+							<td ><button class='btn btn-default',align="center">Download</button></td>	
+						</tr>
+						{% endfor %}
+					
+					</table>
+					</div>
+					</div>
+				
+			</div>
+		</div>
+	</body>
+</html>

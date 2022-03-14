@@ -1,0 +1,45 @@
+
+
+<!--Store this code in 'update.html' file inside the 'templates' folder-->
+<html lang="en">
+	<head>
+		<title>index</title>
+		<link rel="stylesheet" href="../static/style.css">
+	</head>
+	<body bgcolor="#5c9db1">
+		<div class="one">
+			<div class="two">
+				<h2>Phenomenals</h2><br>
+				<ul>
+					<li class="active"><a href="{{url_for('index')}}">Index</a></li>
+					<li><a href="{{url_for('download_file')}}">Download</a></li>
+					<li><a href="{{url_for('profile')}}">Profile</a></li>
+					<li><a href="{{url_for('update')}}">Update</a></li>
+					<li><a href="{{url_for('logout')}}">Log out</a></li>
+				</ul>
+			</div>
+			<div class="content" align="center">
+					<div class="topbar">
+						<h1>Welcome!! You are in Upload Page!! </h1>						
+					</div></br></br>
+					<div class="contentbar">
+					<h1>Select a files</h1></br><br>	
+				
+				<form action="/index" method="POST" enctype="multipart/form-data">
+					<div class="form-group">
+						  <!-- <label><h2>Select image</h2></label></br></br> -->
+						  <div class="custom-file">
+							<input type="file" class="custom-file-input" name="image" id="image"></br></br>
+							<input type="submit" class="btn" value="Upload">
+						  </div>
+					</div>
+						{{msg}}
+					
+	
+				</form>			
+				</div>
+				
+			</div>
+		</div>
+	</body>
+</html>
